@@ -11,10 +11,12 @@ const app = dva({
 // app.use({});
 
 // 3. Model
-// app.model(require('./models/example').default);
+app.model(require('./models/counter').default);
+app.model(require('./models/example').default);
+
 
 // 4. Router
-console.log(require('./router'));
+//require能在下面引入，import只能在上面引用
 app.router(require('./router').default);
 
 // 5. Start
